@@ -17,7 +17,7 @@ public class Solution {
             Random rand = new Random();
             int  N = rand.nextInt(MAXLEN) + 1;
             int  P = rand.nextInt(MAXLEN) + 1;
-            while(P%N!=0) {
+            while(N%P!=0) {
                 P = rand.nextInt(MAXLEN) + 1;
             }
             input = input + N + " " + P + "\n";

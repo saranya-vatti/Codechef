@@ -7,34 +7,33 @@ public class Solution {
         while (T-->0) {
             int N = in.nextInt();
             int P = in.nextInt();
-            String str = "";
+            StringBuilder result = new StringBuilder("");
             if (P<=2) {
                 System.out.println("impossible");
             } else {
-                String strP = "a";
+                StringBuilder strP = new StringBuilder("a");
 
                 while(strP.length()*2<P-2) {
-                    strP += strP;
+                    strP.append(strP);
                 }
                 if (strP.length() < P-2) {
                     while(strP.length()<P-2) {
-                        strP += "a";
+                        strP.append("a");
                     }
                 }
-                strP = "b" + strP + "b";
-                str = strP;
+                strP.append("b");
+                strP.append(strP);
+                strP.append("b");
+                result.append(strP);
                 // System.out.println("strP = "+strP);
-                while(str.length()*2<N) {
-                    str += str;
+                while(result.length()*2<N) {
+                    result.append(result);
                 }
-                if (str.length() < N) {
-                    while(str.length()<N) {
-                        str += strP;
-                    }
+                while(result.length()<N) {
+                    result.append(strP);
                 }
-                System.out.println(str);
+                System.out.println(result);
             }
         }
     }
 }
- 
